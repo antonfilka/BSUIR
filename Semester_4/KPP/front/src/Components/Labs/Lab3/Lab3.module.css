@@ -1,0 +1,14 @@
+.lab {
+    margin: 50px 30px 30px 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.T1 {
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: aliceblue;
+}

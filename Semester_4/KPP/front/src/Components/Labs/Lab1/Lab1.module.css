@@ -1,0 +1,51 @@
+.lab {
+    margin: 50px 30px 30px 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.T1 {
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.line {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.result {
+    color: brown;
+    margin-left: 30px;
+}
+
+.line label{
+    margin-left: 20px;
+}
+
+.line input {
+    font-size: 18px;
+    height: 30px;
+    margin-left: 20px;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 8px;
+}
+
+.line button {
+    font-size: 18px;
+    margin-left: 20px;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}

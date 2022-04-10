@@ -1,0 +1,9 @@
+.button {
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-right: 40px;
+    margin-left: auto;
+    cursor: pointer;
+}
