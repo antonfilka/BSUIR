@@ -2,8 +2,6 @@ package antonfilippovich.javakpp.restservice.service;
 
 import antonfilippovich.javakpp.restservice.logger.EventsLogger;
 import org.apache.logging.log4j.Level;
-
-import java.util.Arrays;
 import java.util.stream.Collector;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -32,6 +30,7 @@ public class FuncShifterAPI {
 
     public static int[] FilterData (String[] arr){
         EventsLogger.Log(Level.INFO, "Filtering");
-        return Stream.of(arr).mapToInt(Integer::parseInt).filter(i -> i < 100).toArray();
+        IntStream stream = Stream.of(arr).mapToInt(Integer::parseInt);
+        return stream.filter(i -> i < 100).toArray();
     }
 }

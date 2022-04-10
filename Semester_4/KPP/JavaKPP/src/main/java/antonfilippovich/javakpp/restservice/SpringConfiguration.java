@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class SpringConfiguration {
 
-    @Bean("cache")
+    @Bean( "cache")
     @Scope(value = "singleton")
     Cache cache(){
         return new Cache();

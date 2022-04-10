@@ -10,6 +10,7 @@ import antonfilippovich.javakpp.restservice.service.ShifterAPI;
 
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,8 @@ import java.lang.reflect.Array;
 public class DecoderController {
 
     private final ShifterAPI shifterAPI;
+
+    // StatisticsRepo statistics = new StatisticsRepo();
     CounterController NumberOfCalls = new CounterController();
 
     @GetMapping(value = "text/shift", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -73,9 +76,14 @@ public class DecoderController {
     @PostMapping(value = "input",
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity createUser(@RequestBody String[] arr) {
+    public ResponseEntity filter(@RequestBody String[] arr) {
         EventsLogger.Log(Level.INFO, "input reached");
         return ResponseEntity.ok(FuncShifterAPI.FilterData(arr));
     }
+
+//    @GetMapping(value = "stat", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity stat (){
+//        return ResponseEntity.ok().body(statistics);
+//    }
 
 }
