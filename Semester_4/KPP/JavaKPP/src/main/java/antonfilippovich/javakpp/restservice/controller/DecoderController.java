@@ -22,11 +22,14 @@ import org.springframework.http.ResponseEntity;
 public class DecoderController {
 
     private final ShifterAPI shifterAPI;
+    CounterController NumberOfCalls = new CounterController();
 
     @GetMapping(value = "text/shift", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity shiftText (@RequestParam(value = "text", defaultValue = "")String text){
 
         EventsLogger.Log(Level.INFO, "endpoint 'api/text/shift/' has been reached");
+
+        NumberOfCalls.IncremetNumber();
 
         if(text.equals("")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 400: Empty input parameter");
@@ -47,6 +50,8 @@ public class DecoderController {
     public ResponseEntity unShiftText (@RequestParam(value = "text", defaultValue = "")String text){
 
         EventsLogger.Log(Level.INFO, "endpoint 'api/text/unshift/' has been reached");
+
+        NumberOfCalls.IncremetNumber();
 
         if(text.equals("")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 400: Empty input parameter");
