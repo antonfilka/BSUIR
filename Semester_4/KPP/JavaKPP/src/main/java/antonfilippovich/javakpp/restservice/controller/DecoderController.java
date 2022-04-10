@@ -5,6 +5,7 @@ import antonfilippovich.javakpp.restservice.entity.UnShifterEntity;
 import antonfilippovich.javakpp.restservice.entity.ShifterEntity;
 import antonfilippovich.javakpp.restservice.exceptions.InternalException;
 import antonfilippovich.javakpp.restservice.logger.EventsLogger;
+import antonfilippovich.javakpp.restservice.service.FuncShifterAPI;
 import antonfilippovich.javakpp.restservice.service.ShifterAPI;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+
+import java.lang.reflect.Array;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -39,8 +42,9 @@ public class DecoderController {
             throw new InternalException("ERROR CODE 500: internal service exception");
         }
 
-        var params = new Params(text);
-        ShifterEntity shiftedResult = new ShifterEntity(text, shifterAPI.Shifter(params));
+        // var params = new Params(text);
+        // ShifterEntity shiftedResult = new ShifterEntity(text, shifterAPI.Shifter(params));
+        ShifterEntity shiftedResult = new ShifterEntity(text, FuncShifterAPI.FuncShifter(text));
         return ResponseEntity.ok().body(shiftedResult);
     }
 
@@ -60,9 +64,18 @@ public class DecoderController {
             EventsLogger.Log(Level.ERROR, "ERROR CODE 500: internal service exception");
             throw new InternalException("ERROR CODE 500: internal service exception");
         }
-        var params = new Params(text);
-        UnShifterEntity unShiftedResult = new UnShifterEntity(text, shifterAPI.UnShifter(params));
+        // var params = new Params(text);
+        // UnShifterEntity unShiftedResult = new UnShifterEntity(text, shifterAPI.UnShifter(params));
+        UnShifterEntity unShiftedResult = new UnShifterEntity(text, FuncShifterAPI.FuncUnShifter(text));
         return ResponseEntity.ok().body(unShiftedResult);
+    }
+
+    @PostMapping(value = "input",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity createUser(@RequestBody String[] arr) {
+        EventsLogger.Log(Level.INFO, "input reached");
+        return ResponseEntity.ok(FuncShifterAPI.FilterData(arr));
     }
 
 }
