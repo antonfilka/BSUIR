@@ -1,0 +1,97 @@
+The system is: Windows - 10.0.22000 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/Anton/Installs/Visual Studio/VC/Tools/MSVC/14.27.29110/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.27.29112 для x86
+(C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.27.29112.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/Anton/Installs/Visual Studio/VC/Tools/MSVC/14.27.29110/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.27.29112 для x86
+(C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.27.29112.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_a08e3\fast && 	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_a08e3.dir\build.make /nologo -L                  CMakeFiles\cmTC_a08e3.dir\build
+Building C object CMakeFiles/cmTC_a08e3.dir/testCCompiler.c.obj
+	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\cl.exe" @C:\Users\User\AppData\Local\Temp\nm309A.tmp
+testCCompiler.c
+Linking C executable cmTC_a08e3.exe
+	"D:\Anton\Installs\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a08e3.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests  -- "D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_a08e3.dir\objects1.rsp @C:\Users\User\AppData\Local\Temp\nm32CE.tmp
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_c588b\fast && 	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_c588b.dir\build.make /nologo -L                  CMakeFiles\cmTC_c588b.dir\build
+Building C object CMakeFiles/cmTC_c588b.dir/CMakeCCompilerABI.c.obj
+	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\cl.exe" @C:\Users\User\AppData\Local\Temp\nm3D0E.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_c588b.exe
+	"D:\Anton\Installs\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_c588b.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests  -- "D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_c588b.dir\objects1.rsp @C:\Users\User\AppData\Local\Temp\nm3D7C.tmp
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_40975\fast && 	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_40975.dir\build.make /nologo -L                  CMakeFiles\cmTC_40975.dir\build
+Building CXX object CMakeFiles/cmTC_40975.dir/testCXXCompiler.cxx.obj
+	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\cl.exe" @C:\Users\User\AppData\Local\Temp\nm4441.tmp
+testCXXCompiler.cxx
+Linking CXX executable cmTC_40975.exe
+	"D:\Anton\Installs\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_40975.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests  -- "D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_40975.dir\objects1.rsp @C:\Users\User\AppData\Local\Temp\nm45AA.tmp
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_b6be5\fast && 	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_b6be5.dir\build.make /nologo -L                  CMakeFiles\cmTC_b6be5.dir\build
+Building CXX object CMakeFiles/cmTC_b6be5.dir/CMakeCXXCompilerABI.cpp.obj
+	"D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\cl.exe" @C:\Users\User\AppData\Local\Temp\nm49C0.tmp
+CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_b6be5.exe
+	"D:\Anton\Installs\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_b6be5.dir --rc="D:\Windows Kits\10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.18362.0\x86\mt.exe" --manifests  -- "D:\Anton\Installs\Visual Studio\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cmTC_b6be5.dir\objects1.rsp @C:\Users\User\AppData\Local\Temp\nm4A2E.tmp
+
+
+

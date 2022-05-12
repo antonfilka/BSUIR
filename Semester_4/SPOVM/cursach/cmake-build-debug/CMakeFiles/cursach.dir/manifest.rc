@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/Anton/C_Projects/cursach/cmake-build-debug/CMakeFiles/cursach.dir/embed.manifest"
