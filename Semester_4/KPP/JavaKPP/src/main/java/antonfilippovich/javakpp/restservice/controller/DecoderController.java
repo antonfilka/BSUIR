@@ -8,6 +8,7 @@ import antonfilippovich.javakpp.restservice.logger.EventsLogger;
 import antonfilippovich.javakpp.restservice.service.FuncShifterAPI;
 import antonfilippovich.javakpp.restservice.service.ShifterAPI;
 
+import antonfilippovich.javakpp.restservice.service.StatService;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.Level;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ public class DecoderController {
     // StatisticsRepo statistics = new StatisticsRepo();
     CounterController NumberOfCalls = new CounterController();
 
+    StatService statService = new StatService();
+
     @GetMapping(value = "text/shift", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity shiftText (@RequestParam(value = "text", defaultValue = "")String text){
 
@@ -39,11 +42,15 @@ public class DecoderController {
 
         if(text.equals("")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 400: Empty input parameter");
+            statService.increaseWrongRequests();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ERROR CODE 400: Empty input param");
         } else if (text.equals("o")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 500: internal service exception");
+            statService.increaseWrongRequests();
             throw new InternalException("ERROR CODE 500: internal service exception");
         }
+        statService.addRoot(text.length());
+        statService.increaseTotalRequests();
 
         // var params = new Params(text);
         // ShifterEntity shiftedResult = new ShifterEntity(text, shifterAPI.Shifter(params));
@@ -62,13 +69,19 @@ public class DecoderController {
 
         if(text.equals("")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 400: Empty input parameter");
+            statService.increaseWrongRequests();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ERROR CODE 400: Empty input param");
         } else if (text.equals("o")){
             EventsLogger.Log(Level.ERROR, "ERROR CODE 500: internal service exception");
+            statService.increaseWrongRequests();
             throw new InternalException("ERROR CODE 500: internal service exception");
         }
         // var params = new Params(text);
         // UnShifterEntity unShiftedResult = new UnShifterEntity(text, shifterAPI.UnShifter(params));
+
+        statService.addRoot(text.length());
+        statService.increaseTotalRequests();
+
         UnShifterEntity unShiftedResult = new UnShifterEntity(text, FuncShifterAPI.FuncUnShifter(text));
         return ResponseEntity.ok().body(unShiftedResult);
     }
@@ -80,10 +93,5 @@ public class DecoderController {
         EventsLogger.Log(Level.INFO, "input reached");
         return ResponseEntity.ok(FuncShifterAPI.FilterData(arr));
     }
-
-//    @GetMapping(value = "stat", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity stat (){
-//        return ResponseEntity.ok().body(statistics);
-//    }
 
 }
