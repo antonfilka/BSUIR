@@ -1,0 +1,38 @@
+{
+  "name": "networks",
+  "version": "1.0.0",
+  "description": "networks learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "read": "ts-node src/reader.ts",
+    "write": "ts-node src/reader.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonfilka/networks.git"
+  },
+  "keywords": [
+    "networks",
+    "bsuir",
+    "toks",
+    "serialport",
+    "rs-232"
+  ],
+  "author": "Anton Filippovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonfilka/networks/issues"
+  },
+  "homepage": "https://github.com/antonfilka/networks#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "serialport": "^10.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
