@@ -56,7 +56,6 @@ public class StatService {
 
             roots = roots
                     .stream()
-                    .distinct()
                     .sorted()
                     .collect(Collectors.toList());
 

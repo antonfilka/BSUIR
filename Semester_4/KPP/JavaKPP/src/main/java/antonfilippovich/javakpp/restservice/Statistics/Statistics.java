@@ -1,7 +1,5 @@
 package antonfilippovich.javakpp.restservice.Statistics;
 
-
-
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
