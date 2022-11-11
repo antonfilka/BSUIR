@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+.heading {
+  font-weight: 800;
+  color: #000000;
+  font-size: 50px;
+}
+.sub-heading {
+  font-family: cursive;
+  font-weight: 800;
+  color: #2b00c7;
+  font-size: 40px;
+}
+
+span {
+  font-size: 25px;
+  text-transform: capitalize;
+  color: rgb(59, 59, 59);
+  font-weight: bold;
+  padding-right: 10px;
+}
+input[type="number"] {
+  width: 50%;
+}

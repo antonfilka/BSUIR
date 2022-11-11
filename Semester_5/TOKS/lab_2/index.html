@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stuffing & De-Stuffing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h2 class="text-center my-5 heading">
+          Bit & Byte Stuffing & De Stuffing
+        </h2>
+        <div class="text-center my-5">
+          <h3>Anton Filippovich 050503</h3>
+        </div>
+        <div class="structure">
+          <div class="input-group mb-3">
+            <span>Input Bit :&nbsp;</span
+            ><input id="input" type="text" class="form-control" aria-label="" />
+            <button>
+              <select
+                id="transOption"
+                class="form-select form-select-md btn btn-primary"
+                aria-label=".form-select-md"
+              >
+                <option value="Bit Stuffing" selected>Bit Stuffing</option>
+                <option value="Bit De Stuffing">Bit De Stuffing</option>
+                <option value="Byte Stuffing">Byte Stuffing</option>
+                <option value="Byte De Stuffing">Byte De Stuffing</option>
+              </select>
+            </button>
+          </div>
+          <div class="convert-btn text-center py-3">
+            <button id="convert" class="btn btn-primary">Convert</button>
+          </div>
+          <div class="input-group mb-3">
+            <span>Output Bit :</span
+            ><input
+              id="output"
+              type="text"
+              class="form-control"
+              aria-label=""
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
