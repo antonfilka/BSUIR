@@ -7,10 +7,6 @@ document.getElementById("convert").addEventListener("click", function (event) {
     bitStuffing(inputStr);
   } else if (transOption == "Bit De Stuffing") {
     bitDeStuffing(inputStr);
-  } else if (transOption == "Byte Stuffing") {
-    byteStuffing(inputStr);
-  } else if (transOption == "Byte De Stuffing") {
-    byteDeStuffing(inputStr);
   }
 });
 
