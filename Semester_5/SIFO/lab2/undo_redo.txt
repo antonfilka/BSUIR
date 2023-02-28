@@ -1,0 +1,25 @@
+GED
+
+	Redo Commands
+	     1.	Delete Insert
+	     2.	Insert Node
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Simulation Waveforms
+
+
+WED
+
+	Undo Commands
+	     1.	Clock
+
+

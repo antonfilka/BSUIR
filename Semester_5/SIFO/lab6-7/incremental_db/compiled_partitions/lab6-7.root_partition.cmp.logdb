@@ -1,0 +1,6 @@
+v1
+RAM_PACKING,0,M4K,18,18,TrueDual,0,4,10000010,lpm_ram_io:inst122|altram:sram|altsyncram:ram_block|altsyncram_ud91:auto_generated|q_a[4],
+RAM_PACKING,0,M4K,18,18,TrueDual,0,3,10000010,lpm_ram_io:inst122|altram:sram|altsyncram:ram_block|altsyncram_ud91:auto_generated|q_a[3],
+RAM_PACKING,0,M4K,18,18,TrueDual,0,2,10000010,lpm_ram_io:inst122|altram:sram|altsyncram:ram_block|altsyncram_ud91:auto_generated|q_a[2],
+RAM_PACKING,0,M4K,18,18,TrueDual,0,1,10000010,lpm_ram_io:inst122|altram:sram|altsyncram:ram_block|altsyncram_ud91:auto_generated|q_a[1],
+RAM_PACKING,0,M4K,18,18,TrueDual,0,0,10000010,lpm_ram_io:inst122|altram:sram|altsyncram:ram_block|altsyncram_ud91:auto_generated|q_a[0],

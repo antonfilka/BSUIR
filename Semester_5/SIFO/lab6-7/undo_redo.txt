@@ -1,0 +1,117 @@
+GED
+
+	Undo Commands
+	     1.	Resize
+	     2.	Resize
+	     3.	Move
+	     4.	Move
+	     5.	Paste
+	     6.	Delete
+	     7.	Delete
+	     8.	Insert Node
+	     9.	Insert Node
+	    10.	Move
+	    11.	Move
+	    12.	Paste
+	    13.	Properties
+	    14.	Properties
+	    15.	Properties
+	    16.	Delete
+	    17.	Move
+	    18.	Move
+	    19.	Move
+	    20.	Paste
+	    21.	Delete
+	    22.	Resize
+	    23.	Insert Bus
+	    24.	Move
+	    25.	Paste
+	    26.	Insert Node
+	    27.	Properties
+	    28.	Insert Symbol
+	    29.	Insert Bus
+	    30.	Properties
+	    31.	Insert Symbol
+	    32.	Resize
+	    33.	Properties
+	    34.	Properties
+	    35.	Insert Node
+	    36.	Properties
+	    37.	Insert Node
+	    38.	Move
+	    39.	Rotate 90
+	    40.	Insert Symbol
+	    41.	Properties
+	    42.	Insert Node
+	    43.	Insert Symbol
+	    44.	Insert Node
+	    45.	Properties
+	    46.	Insert Symbol
+	    47.	Properties
+	    48.	Insert Node
+	    49.	Properties
+	    50.	Insert Node
+	    51.	Move
+	    52.	Resize
+	    53.	Properties
+	    54.	Delete Insert
+	    55.	Insert Node
+	    56.	Move
+	    57.	Insert Symbol
+	    58.	Properties
+	    59.	Update Symbol or Block
+	    60.	Insert Bus
+	    61.	Resize
+	    62.	Properties
+	    63.	Properties
+	    64.	Properties
+	    65.	Insert Bus
+	    66.	Resize
+	    67.	Move
+	    68.	Move
+	    69.	Properties
+	    70.	Properties
+	    71.	Insert Bus
+	    72.	Move
+	    73.	Move
+	    74.	Properties
+	    75.	Insert Node
+	    76.	Move
+	    77.	Insert Symbol
+	    78.	Delete
+	    79.	Insert Bus
+	    80.	Properties
+	    81.	Insert Node
+	    82.	Insert Symbol
+	    83.	Properties
+	    84.	Insert Node
+	    85.	Insert Node
+	    86.	Move
+	    87.	Move
+	    88.	Insert Node
+	    89.	Move
+	    90.	Move
+	    91.	Move
+	    92.	Paste
+	    93.	Delete
+	    94.	Insert Symbol
+	    95.	Properties
+	    96.	Insert Node
+	    97.	Resize
+	    98.	Insert Node
+	    99.	Move
+	   100.	Properties
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Simulation Waveforms
+
+

@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.313 ns
+From           : REQ[3]
+To             : Master4:inst5|inst9
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.047 ns
+From           : Arbiter2:inst7|lpm_counter2:inst4|lpm_counter:lpm_counter_component|cntr_q3i:auto_generated|safe_q[0]
+To             : data[3]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -2.289 ns
+From           : REQ[0]
+To             : Master1:inst|inst9
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 195.43 MHz ( period = 5.117 ns )
+From           : Arbiter2:inst7|lpm_counter2:inst4|lpm_counter:lpm_counter_component|cntr_q3i:auto_generated|safe_q[0]
+To             : Master4:inst5|lpm_counter1:inst18|lpm_counter:lpm_counter_component|cntr_4pi:auto_generated|safe_q[2]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Arbiter2:inst7|lpm_counter2:inst4|lpm_counter:lpm_counter_component|cntr_q3i:auto_generated|safe_q[1]
+To             : Arbiter2:inst7|lpm_counter2:inst4|lpm_counter:lpm_counter_component|cntr_q3i:auto_generated|safe_q[1]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 3
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 3
+
+--------------------------------------------------------------------------------------
+

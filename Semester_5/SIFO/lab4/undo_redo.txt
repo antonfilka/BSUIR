@@ -1,0 +1,100 @@
+GED
+
+	Undo Commands
+	     1.	Properties
+	     2.	Properties
+	     3.	Insert Bus
+	     4.	Move
+	     5.	Paste
+	     6.	Move
+	     7.	Paste
+	     8.	Move
+	     9.	Paste
+	    10.	Move
+	    11.	Paste
+	    12.	Move
+	    13.	Paste
+	    14.	Move
+	    15.	Move
+	    16.	Paste
+	    17.	Move
+	    18.	Paste
+	    19.	Properties
+	    20.	Properties
+	    21.	Insert Symbol
+	    22.	Delete
+	    23.	Paste
+	    24.	Move
+	    25.	Delete
+	    26.	Insert Symbol
+	    27.	Move
+	    28.	Delete
+	    29.	Insert Symbol
+
+
+GED
+
+	Undo Commands
+	     1.	Properties
+	     2.	Properties
+	     3.	Properties
+	     4.	Properties
+	     5.	Properties
+	     6.	Properties
+	     7.	Properties
+	     8.	Properties
+	     9.	Move
+	    10.	Paste
+	    11.	Move
+	    12.	Paste
+	    13.	Move
+	    14.	Paste
+	    15.	Move
+	    16.	Paste
+	    17.	Move
+	    18.	Paste
+	    19.	Move
+	    20.	Paste
+	    21.	Move
+	    22.	Paste
+	    23.	Insert Node
+	    24.	Properties
+	    25.	Insert Symbol
+	    26.	Move
+	    27.	Move
+	    28.	Move
+	    29.	Move
+	    30.	Move
+	    31.	Move
+	    32.	Move
+	    33.	Move
+	    34.	Move
+	    35.	Move
+	    36.	Move
+	    37.	Move
+	    38.	Move
+	    39.	Move
+	    40.	Move
+	    41.	Move
+	    42.	Move
+	    43.	Move
+	    44.	Move
+	    45.	Move
+	    46.	Move
+	    47.	Move
+	    48.	Move
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Logical Memories|||main|RAM:inst1|lpm_ram_dq0:inst|altsyncram:altsyncram_component|altsyncram_avb1:auto_generated|ALTSYNCRAM
+	     2.	||Simulation Report||Simulator||Simulation Waveforms
+
+

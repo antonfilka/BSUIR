@@ -1,0 +1,105 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 222 10/21/2009 SJ Web Edition
+# Date created = 13:11:15  November 20, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Main_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Stratix II"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY Main
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:11:15  NOVEMBER 20, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.1
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
+set_global_assignment -name BDF_FILE Main.bdf
+set_global_assignment -name BDF_FILE Master1.bdf
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_bustri5.qip
+set_global_assignment -name QIP_FILE lpm_bustri0.qip
+set_global_assignment -name QIP_FILE ../lab5/lpm_bustri5.qip
+set_global_assignment -name QIP_FILE lpm_constant1.qip
+set_global_assignment -name QIP_FILE lpm_constant2.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name BDF_FILE Arbiter.bdf
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name QIP_FILE lpm_compare4.qip
+set_global_assignment -name QIP_FILE lpm_compare5.qip
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_constant3.qip
+set_global_assignment -name QIP_FILE lpm_constant4.qip
+set_global_assignment -name QIP_FILE lpm_constant5.qip
+set_global_assignment -name QIP_FILE lpm_constant6.qip
+set_global_assignment -name BDF_FILE M_Choise.bdf
+set_global_assignment -name BDF_FILE Priority.bdf
+set_global_assignment -name QIP_FILE lpm_compare6.qip
+set_global_assignment -name QIP_FILE lpm_mux1.qip
+set_global_assignment -name QIP_FILE lpm_constant7.qip
+set_global_assignment -name BDF_FILE Master2.bdf
+set_global_assignment -name QIP_FILE lpm_constant8.qip
+set_global_assignment -name QIP_FILE lpm_constant9.qip
+set_global_assignment -name BDF_FILE Master3.bdf
+set_global_assignment -name QIP_FILE lpm_constant10.qip
+set_global_assignment -name QIP_FILE lpm_constant11.qip
+set_global_assignment -name BDF_FILE Master4.bdf
+set_global_assignment -name BDF_FILE Slave1.bdf
+set_global_assignment -name QIP_FILE lpm_compare7.qip
+set_global_assignment -name QIP_FILE lpm_bustri1.qip
+set_global_assignment -name BDF_FILE Slave2.bdf
+set_global_assignment -name BDF_FILE Slave3.bdf
+set_global_assignment -name BDF_FILE Slave4.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name QIP_FILE lpm_constant03.qip
+set_global_assignment -name QIP_FILE lpm_constant13.qip
+set_global_assignment -name QIP_FILE lpm_constant23.qip
+set_global_assignment -name QIP_FILE lpm_constant33.qip
+set_global_assignment -name QIP_FILE lpm_bustri2.qip
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_WAVEFORM_FILE Main.vwf
+set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS OFF
+set_global_assignment -name BDF_FILE Block10.bdf
+set_global_assignment -name BDF_FILE Arbiter2.bdf
+set_global_assignment -name QIP_FILE lpm_compare8.qip
+set_global_assignment -name QIP_FILE lpm_compare10.qip
+set_global_assignment -name QIP_FILE lpm_compare11.qip
+set_global_assignment -name QIP_FILE lpm_counter2.qip
+set_global_assignment -name QIP_FILE lpm_decode0.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
