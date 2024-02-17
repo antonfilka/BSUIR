@@ -1,0 +1,111 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<div align="center">
+  <p><strong>Контрольная работа № 2</strong></p>
+</div>
+
+<div align="center">
+  <p><strong>Сетевое системное программное обеспечение</strong></p>
+</div>
+	<p>
+		<strong>Тема работы: </strong>Реализация утилит ping и traceroute,
+		изменение адреса источника и приемника.
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br /> <strong>Теоретические сведения: </strong>тема <a
+			href="../../../Теория/content/lk11.htm" target="_new">11</a> </strong>
+	</p>
+
+	<p style="margin-bottom: 0cm; line-height: 100%">
+		<font size="3" style="font-size: 12pt"><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">Требования:
+				</span></font></strong></font>
+	</p>
+	<ul>
+		<li />
+		<p style="margin-bottom: 0cm; line-height: 100%">
+			<font size="3" style="font-size: 12pt"><strong><font
+					face="Arial, sans-serif"><span style="font-weight: normal">ОС
+							Linux (последние версии Windows не позволяют отправлять пакеты с
+							модифицированным адресом отправителя), </span></font></strong></font>
+		</p>
+		<li />
+		<p style="margin-bottom: 0cm; line-height: 100%">
+			<font size="3" style="font-size: 12pt"><strong><font
+					face="Arial, sans-serif"><span style="font-weight: normal">C/C++
+							либо другой язык позволяющий формировать поля IP заголовка
+							(изменение TTL, задание адреса отправителя)</span></font></strong></font>
+		</p>
+		<p style="margin-bottom: 0cm; line-height: 100%"></p>
+	</ul>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<font size="4" style="font-size: 14pt"><strong><font
+				face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Реализация
+							программы параллельного ping. Выполнить пинг нескольких хостов.</span></font></font></strong></font>
+	</p>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<font size="4" style="font-size: 14pt"><strong><font
+				face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Время
+							задержки передачи = (время приема - время отправки)/2</span></font></font></strong></font>
+	</p>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<font size="4" style="font-size: 14pt"><strong><font
+				face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Возможные
+							реализации:</span></font></font></strong></font>
+	</p>
+	<ul>
+		<li />
+		<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+			<strong><font face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">В
+							эхо запросе отправлять идентификатор потока сформировавшего
+							запрос и ожидающего ответ. Каждый поток считывает из буфера
+							входящие пакеты с флагом MSG_PEEK. Если идентификатор принятый в
+							эхо-отклике совпадает с идентификатором текущего потока –
+							выполняется повторное вычитывание без флага.</span></font></font></strong>
+		</p>
+		<li />
+		<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+			<strong><font face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Метка
+							времени отправки эхо-запроса посылается внутри пакета. Поток,
+							получивший эхо-ответ вычисляет время затраченное на передачу.</span></font></font></strong>
+		</p>
+	</ul>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<br />
+
+	</p>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<font size="4" style="font-size: 14pt"><strong><font
+				face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Добавить
+							возможность определения пути до каждого узла назначения
+							(traceroute), </span></font></font></strong><strong><font face="Arial, sans-serif"><font
+					size="3" style="font-size: 12pt"><span
+						style="font-weight: normal">путем модификации в цикле поля
+							TTL IP заголовка.</span></font></font></strong></font>
+	</p>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<br />
+
+	</p>
+	<p align="justify" style="margin-bottom: 0cm; line-height: 100%">
+		<font size="4" style="font-size: 14pt"><strong><font
+				face="Arial, sans-serif"><font size="3"
+					style="font-size: 12pt"><span style="font-weight: normal">Преобразовать
+							утилиту ping для выполнения атаки Smurf (в качестве адреса
+							источника указывается адрес атакуемого узла в заголовке
+							IP&shy;пакета). Продемонстрировать на атакуемом узле по средствам
+							Wireshark.</span></font></font></strong></font>
+	</p>
+
+</BODY>
+</HTML>

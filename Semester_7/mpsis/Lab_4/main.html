@@ -1,0 +1,109 @@
+#include <msp430.h> 
+
+char compareLedMode = 0;  // 0 - отключен, 1 - сравнение между PAD2 и потенциометром
+volatile int i;
+
+#pragma vector=PORT1_VECTOR
+__interrupt void PORT1_ISR(void) {
+    for(i=0;i<2500;i++);
+
+    if(!(P1IN & BIT7))     {
+        P1IFG &= ~BIT7;
+
+        if(!compareLedMode)             {
+                P1OUT &= ~BIT0; // Выключаем светодиоды
+                P1OUT &= ~BIT3;
+
+                // Отключаем компаратор
+               CBCTL1 &= ~CBON;
+
+               // Включаем АЦП
+               ADC12CTL0 |= ADC12ON;
+               ADC12CTL0 |= ADC12ENC | ADC12SC; // Включаем преобразование и начинаем вычисления
+               ADC12IE |= ADC12IE0; // Разрешаем прерывания на канале 0
+               // Сбрасываем флаги прерываний
+               ADC12IFG &= ~ADC12IFG0;
+            }
+        else {
+            P1OUT &= ~BIT0; // Выключаем светодиоды
+            P1OUT &= ~BIT3;
+
+            // Отключаем АЦП
+            ADC12IE &= ~ADC12IE0;
+            ADC12CTL0 &= ~ADC12ON;
+            ADC12CTL0 &= ~(ADC12ENC | ADC12SC); // Отключаем преобразование
+
+            // Включаем компаратор
+            CBCTL1 |= CBON;
+            CBINT |= CBIE; // Разрешаем основные прерывания компаратора
+            CBINT &= ~CBIFG; // Сбрасываем флаги прерываний
+        }
+
+        compareLedMode ^= BIT0; // Переключаем режим
+    }
+}
+
+/**
+ * main.c
+ */
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
+    
+    P1DIR |= BIT0 | BIT3; // настройка светодиодов на выход
+
+    P1OUT &= ~BIT0; // Выключаем светодиоды
+    P1OUT &= ~BIT3;
+
+    // S1 init
+    P1DIR &= ~BIT7;
+    P1REN |= BIT7;  // разрешение подтягивающего резистора
+    P1OUT |= BIT7;  // настройка подтягивающего резистора
+    P1IES |= BIT7;  // прерывание по спаду (нажатие кнопки)
+    P1IFG &= ~BIT7; // обнуление флага прерывания кнопки
+    P1IE |= BIT7;   // разрешение прерывания
+
+    // ADC init
+    // Подключаем потенциометр
+    P6SEL |= BIT5;
+    // Выбираем канал АЦП для потенциометра
+    ADC12MCTL0 |= ADC12INCH_5; 
+    // Конфигурация АЦП
+    ADC12CTL1 |= ADC12SHP | ADC12CONSEQ_0;
+    ADC12CTL0 |= ADC12ON | ADC12MSC | ADC12SHT0_8;
+    ADC12CTL2 |= ADC12RES_2;
+    ADC12IE |= ADC12IE0;
+
+    // Comp init
+    // Настройка компаратора для сравнения PAD2 и потенциометра
+    CBCTL0 |= CBIPEN + CBIPSEL_2; // Вход + на PAD2
+    CBCTL1 |= CBMRVS;             // Вход - на VREF
+
+    // Настройка и включение компаратора
+    CBCTL1 |= CBFDLY_3 | CBF | CBON;
+    CBINT |= CBIE | CBIIE;
+
+    __bis_SR_register(GIE + LPM0_bits);
+    return 0;
+}
+
+#pragma vector=COMP_B_VECTOR 
+__interrupt void comparator_interrupt() {
+   if(CBCTL1 & CBOUT) { // если на выходе компаратора 1, то PAD2 > Vref
+       P1OUT |= BIT0;  // зажигаем светодиод на P1.0
+   }
+   else {
+       P1OUT |= BIT3;  // зажигаем светодиод на P1.3
+   }
+
+   CBINT &= ~CBIFG;  // сбрасываем флаг прерывания
+   CBINT &= ~CBIIFG; // сбрасываем инверсный флаг прерывания
+}
+
+#pragma vector=ADC12_VECTOR
+__interrupt void adc_interrupt() {
+    if (ADC12IV == ADC12IV_ADC12IFG0) { // Проверка флага прерывания для канала 0
+        // Здесь может быть добавлена логика обработки значения АЦП
+        ADC12IFG &= ~ADC12IFG0; // Сбрасываем флаг прерывания
+    }
+}
+

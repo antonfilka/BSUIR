@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="140000fs"></ZoomStartTime>
+      <ZoomEndTime time="822001fs"></ZoomEndTime>
+      <Cursor1Time time="400000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="164"></NameColumnWidth>
+      <ValueColumnWidth column_width="70"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/top_tb/G" type="logic">
+      <obj_property name="ElementShortName">G</obj_property>
+      <obj_property name="ObjectShortName">G</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/R_C" type="logic">
+      <obj_property name="ElementShortName">R_C</obj_property>
+      <obj_property name="ObjectShortName">R_C</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/RCK" type="logic">
+      <obj_property name="ElementShortName">RCK</obj_property>
+      <obj_property name="ObjectShortName">RCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/ENP" type="logic">
+      <obj_property name="ElementShortName">ENP</obj_property>
+      <obj_property name="ObjectShortName">ENP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/ENT" type="logic">
+      <obj_property name="ElementShortName">ENT</obj_property>
+      <obj_property name="ObjectShortName">ENT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/RCO" type="logic">
+      <obj_property name="ElementShortName">RCO</obj_property>
+      <obj_property name="ObjectShortName">RCO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/CCLR" type="logic">
+      <obj_property name="ElementShortName">CCLR</obj_property>
+      <obj_property name="ObjectShortName">CCLR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/U_D" type="logic">
+      <obj_property name="ElementShortName">U_D</obj_property>
+      <obj_property name="ObjectShortName">U_D</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/LOAD" type="logic">
+      <obj_property name="ElementShortName">LOAD</obj_property>
+      <obj_property name="ObjectShortName">LOAD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/INP" type="array">
+      <obj_property name="ElementShortName">INP[3:0]</obj_property>
+      <obj_property name="ObjectShortName">INP[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/Q" type="array">
+      <obj_property name="ElementShortName">Q[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/CCK" type="logic">
+      <obj_property name="ElementShortName">CCK</obj_property>
+      <obj_property name="ObjectShortName">CCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/PERIOD" type="other">
+      <obj_property name="ElementShortName">PERIOD</obj_property>
+      <obj_property name="ObjectShortName">PERIOD</obj_property>
+   </wvobject>
+</wave_config>

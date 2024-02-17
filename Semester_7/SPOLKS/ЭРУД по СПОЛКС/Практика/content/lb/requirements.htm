@@ -1,0 +1,290 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<title>Общие требования по выполнению лабораторных работ</title>
+<base target="_top">
+</HEAD><BODY>
+<div align="center">
+  <p><strong>Общие требования по выполнению лабораторных работ </strong></p>
+</div>
+
+<ol>
+	<li/>
+<p style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	<b>Общие требования</b></p>
+	<ol type="a">
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Все лабораторные сдаются одновременно
+		на 2+ машинах, то есть демонстрируется
+		работа в реальной сети. Сдавать с
+		использованием виртуальных машин
+		возможно только в порядке индивидуального
+		согласования.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Для написания ЛР могут использоваться
+		языки C/C++/Objective-C в любом сочетании.
+		Использовать иные языки возможно
+		только в случае, если они предоставляют
+		непосредственный доступ к системным
+		вызовам и струкутрам Berkeley Sockets. В случае
+		спорной ситуации, необходимо будет
+		переписать реализацию на C/C++/Objective-C.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Скорость передачи файлов должна быть
+		не менее 50% от максимальной теоретической
+		скорости передачи данных в сети, вне
+		зависимости от задержек.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Критерии проверки скорости передачи
+		будут учитывать как реальную проверку
+		скорости, так и теоретическую. Параметры
+		сети, в которых должна выдерживаться
+		указанная в пункте <b>1.c</b> скорость: 
+		</p>
+		<ol type="i">
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			задержки в сети - 10 секунд</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			количество потерянных UDP пакетов - 5%,
+			но не менее 1-го из серии.</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			если передаются 2 независимых пакета
+			(не в рамках одной серии), то теряется
+			хотя бы один из них, причем выбираться
+			будет наихудший случай для реализованного
+			алгоритма.</p>
+		</ol>
+		<li/>
+<a name="1e"></a>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Все реализации должны работать в рамках
+		одного процесса и потока, если иное
+		явно не указано в условиях ЛР. Если
+		потоки автоматически создаются ОС
+		(вызов callBack функции и обработчики
+		сигналов), то это допустимо.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Код функций должен быть коротким и
+		содержать только суть выполняемых
+		действий. Каждая фунция (метод класса)
+		должна выполнять только одно понятное,
+		простое и законченное действие, которое
+		ясно из ее названия. При необходимости
+		выполнить несколько действий, необходимо
+		каждое из них вынести в отдельную
+		функцию. Максимальная сложность функции
+		должна быть ограничена 10-15 действиями
+		и весь ее код должен вмещаться в 60
+		строк, то есть примерно на один экран,
+		включая и пустые строки. Под действиями
+		подразумеваются вызовы функций,
+		условные операторы, математические
+		выражения и т.д. Инициализация и
+		объявление перемеменных (в том числе
+		вызовы memset, zeromem, malloc, free) дейтсвиями не
+		считаются. Допустимо иметь несколько
+		больших функций, только если вы сможете
+		обосновать необходимость их создания
+		(преимущества относительно нескольких
+		более маленьких). Накладные расходы
+		на вызов функий, а также плохая
+		архитектура приложения (передача
+		100500 параметров) обоснованием не
+		являются.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Реализации лабораторных работ должны
+		быть кросплатформенными. То есть один
+		и тот же код должен компилироватся и
+		работать как в Windows так и в одной из
+		*nix систем на выбор: Linux, BSD, Mac OS X. Для
+		Windows обязательным условием язвляется
+		использование копилятора MSVC входящего
+		в Visual Studio 2010 или выше. Для *nix систем
+		выбор средства разработки остается
+		на усмотрение студента.</p>
+		<ol type="i">
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			Для реализаций ЛР защищенных <b>до
+			18.10.2014</b> включительно требование
+			пункта <b>2.a</b> не распространяется. То
+			есть, последующая работа должна
+			включать функуциональность предыдущей,
+			работа которой гарантируется только
+			в одной из ОС.</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			Для эмуляции *nix сигналов на Windows,
+			допускается создание дополнительных
+			потоков, без какой либо обработки
+			данных в них, а только для ожидания
+			событий! Например ожиданий событий
+			на сокете с использованием функциий
+			<font color="#454545"><b>WSACreateEvent</b></font><font color="#454545">
+			и </font><font color="#454545"><b>WSAEventSelect</b></font><font color="#454545"><font face="Verdana"><b>
+			</b></font></font><font color="#454545"><font face="Verdana">(</font></font><font color="#454545">или
+			других, например </font><font color="#454545"><b>WSARecv</b></font><font color="#454545">/</font><font color="#454545"><b>WSARecvEx</b></font><font color="#454545"><font face="Verdana">)</font></font></p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 136%; page-break-before: auto; page-break-after: auto">
+			Так как fopen/open под Windows не работает с
+			UTF-8, то допускается работа с именами
+			файлов представленных только в ASCII,
+			так как цель ЛР изучение работы с сетью
+			и сокетам. Однако реализация обертки
+			вокруг файлов с поддержкой Unicode и
+			вызовом функции CreateFileW (принимает
+			UTF-16) будет большим плюсом.</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			Стиль написания кода (об этом говорилось
+			еще в прошлом году).<font color="#454545"><br/>
+</font><font color="#454545"><b>Неправильный
+			способ написания:</b></font></p>
+		</ol>
+	</ol>
+</ol>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#7f6000">#if WINDOWS</font></p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#454545">	</font>WSAConnect(s);</p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#7f6000">#elif UNIX</font></p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#454545">	</font>connect(s);</p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#7f6000">#endif</font></p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<br/>
+
+</p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<font color="#454545"><b>Правильный способ:</b></font></p>
+<p align="justify" style="margin-left: 3.81cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+Connect(s); <font color="#454545"><br/>
+</font><font color="#38761d">/*А
+уже внутри функции разбираться что
+вызывать и когда*/</font><font color="#454545"><br/>
+</font><br/>
+
+</p>
+<ol start="2">
+	<li/>
+<p style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	<b>Важные замечания по реализации ЛР</b></p>
+	<ol type="a">
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Следует обратить внимание, что каждая
+		последующая ЛР включает в себя
+		функциональность предыдущей.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Тот процесс который принимает входящие
+		подключения условно называется
+		<i>“сервером”</i>. <i>“Сервер”,</i> вне
+		зависимости от вида, должен поддерживать
+		возможность работы с несколькими
+		клиентами. То есть при отключении
+		<i>“клиента”</i>, сервер должен иметь
+		возможность принять и обслужить другого
+		клиента без своего перезапуска.
+		Завершение работы сервера без явной
+		комманды на это действие будет считаться
+		ошибкой реализации.</p>
+	</ol>
+	<li/>
+<p style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	<b>Основные понятия</b></p>
+	<ol type="a">
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<b>Последовательный сервер </b>- сервер
+		исполняющий комманды (запросы) клиента
+		исключительно последовательно. Если
+		сервер не поддерживает одновременную
+		работу с несколькими клиентами, то их
+		запросы на подключение он должен
+		отвергать. Однако следует обратить
+		внимание на пункт <b>2.b</b>.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<b>Оверхед</b> (overhead) - это накладные
+		расходы которые будут затрачены на
+		выполнение полезной работы. В частности
+		к работе с протоколами TCP/UDP - это размер
+		служебных данных по отношению к
+		полезным. Под служебными данными
+		подразумеваются:</p>
+		<ol type="i">
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			заголовки IP,UDP/TCP, 
+			</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			служебные пакеты ASK, SYN и т.д. 
+			</p>
+			<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			данные используемые программой для
+			правильного выполнения, такие как:
+			номер пакета, размер файла, ответные
+			пакеты подтверждение приема (включая
+			размер всех заголовков) и т.д.</p>
+		</ol>
+	</ol>
+	<li/>
+<p style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+	<b>Основные ошибки в реализации</b></p>
+	<ol type="a">
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Попытка чтения данных из TCP сокета за
+		одну операцию может привести к тому,
+		что не все необходимые данные будут в
+		итоге прочитаны. TCP гарантирует передачу
+		потока байт, но не имеет средств для
+		выделения границ сообщений, то есть
+		не гарантирует прием данных именно
+		такими “порициями”, как они были
+		отправлены. Реализация выделения
+		границ сообщения (окончания комманды,
+		строки и т.д.) ложится на программиста.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Ожидание подтверждения каждого
+		отправленного UDP пакета, и отправка
+		неоправданно малого количества байт
+		в одном пакете. Ожидание каждого пакета
+		приведет к невозможности выполнения
+		требования пункта <b>1.c</b>.</p>
+		<li/>
+<p align="justify" style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		Чтение или отправка данных очень малыми
+		порциями. Требование можно трактовать
+		как то, что среднее значение оверхеда
+		должно быть не более 4% за всю сессию.
+		Что такое оверхед описано в пункте
+		<b>3.b.<br/>
+</b><br/>
+
+		</p>
+	</ol>
+</ol>
+<p align="center" style="margin-left: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<b><br/>
+
+</BODY>
+</HTML>

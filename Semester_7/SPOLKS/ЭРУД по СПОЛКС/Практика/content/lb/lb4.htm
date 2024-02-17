@@ -1,0 +1,360 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type"
+	CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<title>Лабораторная работа №4</title>
+<base target="_top">
+</HEAD>
+<BODY>
+	<div align="center">
+		<a href="./requirements.htm" target="_new"> Общие требования по
+			выполнению лабораторных работ </a><br>
+		<p>
+			<strong>Лабораторная работа № 4 &quot;Модель сетевого
+				взаимодействия клиент-сервер. Параллелизм&quot; </strong>
+		</p>
+	</div>
+	<p>
+		<strong>Тема работы: </strong>Реализация сервера для параллельной
+		обработки клиентских соединений.
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br /> <strong>Теоретические сведения: </strong>тема <a
+			href="../../../Теория/content/lk07.htm" target="_new">7</a>, <a
+			href="../../../Теория/content/lk08.htm" target="_new">8</a>, <a
+			href="../../../Теория/content/lk09.htm" target="_new">9</a> </strong>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Модификация программы из <a
+			href="./lb2.htm">Л.р. 2</a>. Модифицировать сервер для организации
+			параллельного обслуживания нескольких клиентов
+		</font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br />
+
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">В случае предварительного
+			создания пул процессов/потоков должен быть динамическим: при
+			занятости всех существующих обработкой запросов, добавляются новые
+			процессы/потоки в очередь ожидания. Максимальное количество
+			динамически выделенных потоков/процессов должно быть ограничено
+			числом Nmax, при котором сервер может функционировать стабильно. При
+			завершении обработки лишние ожидающие процессы/потоки должны
+			завершаться после определенного таймаута. Минимальное число ожидающих
+			процессов/потоков должно быть ограничено числом Nmin.</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<br />
+
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif"><u>Параллельный сервер без
+				установления логического соединения</u></font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Ведущий поток:</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">1 Создать сокет и привязать его
+			к общепринятому адресу службы</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">2 В цикле считывать запросы с
+			помощью recvfrom и создавать новые ведомые потоки (процессы) для
+			формирования ответа</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<br />
+
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<font face="Arial, sans-serif">Ведомый поток:</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">1 Работа потока начинается с
+			получения конкретного запроса от ведущего потока (процесса), а также
+			доступа к сокету</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">2 Сформировать ответ согласно
+			прикладному протоколу и отправить его клиенту с использованием
+			функции sendto</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">3 Завершить работу потока
+			(процесса)</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<br />
+
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif"><u>Параллельный сервер с
+				установлением логического соединения</u></font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Ведущий поток:</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">1 Создать сокет и привязать его
+			к общепринятому адресу службы</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">2 Перевести сокет в пассивный
+			режим</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">3 Вызвать в цикле функцию accept
+			для получения очередного запроса от клиента и создавть новый ведомый
+			поток или процесс для формирования ответа</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Ведомый поток:</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">1 Работа начинается с получения
+			доступа к соединению, полученному от ведущего потока</font>
+	</p>
+	<p
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">2 Выполнять в цикле работу с
+			клиентом через соединение</font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<font face="Arial, sans-serif"><font size="3"
+			style="font-size: 12pt">3 Закрыть соединение и завершить
+				работу.</font></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br />
+
+	</p>
+	<table width="689" cellpadding="7" cellspacing="0">
+		<col width="47">
+		<col width="612">
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Вар.</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Описание</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">1</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Параллельный сервер с
+								установлением логического соединения (TCP) и созданием дочерних
+								процессов</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">2</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Параллельный сервер с
+								установлением логического соединения (TCP) и созданием дочерних
+								потоков</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">3</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием дочерних процессов с параллельным вызовом accept</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">4</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием дочерних процессов с блокировкой с помощью файла для
+								защиты accept </font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">5</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием дочерних процессов с использованием взаимного
+								исключения (семафор, мьютекс, критические секции windows) для
+								защиты accept</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">6</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием дочерних процессов с последующей передачей дескриптора
+								сокета дочерним процессам</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">7</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием потоков с использованием взаимного исключения для
+								защиты accept</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">8</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Сервер с предварительным
+								созданием потоков, главный поток вызывает accept</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">9</font></font></font>
+				</p>
+			</td>
+			<td width="612" style="border: 1.00pt solid #000000; padding: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Мультисервисный сервер
+								(суперсервер), прослушивание нескольких портов и при запросе на
+								любой из них передавать упраление соединением соответствующему
+								процессу службы (для примера изучить функционирование сервера
+								xinetd)</font></font></font>
+				</p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="47"
+				style="border-top: none; border-bottom: 1.00pt solid #000000; border-left: 1.00pt solid #000000; border-right: 1.00pt solid #000000; padding-top: 0cm; padding-bottom: 0.18cm; padding-left: 0.18cm; padding-right: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">10</font></font></font>
+				</p>
+			</td>
+			<td width="612"
+				style="border-top: none; border-bottom: 1.00pt solid #000000; border-left: 1.00pt solid #000000; border-right: 1.00pt solid #000000; padding-top: 0cm; padding-bottom: 0.18cm; padding-left: 0.18cm; padding-right: 0.18cm">
+				<p align="left"
+					style="font-style: normal; font-weight: normal; text-decoration: none; page-break-before: auto; page-break-after: auto">
+					<font color="#000000"><font face="Arial, sans-serif"><font
+							size="2" style="font-size: 11pt">Организация параллельного
+								обслуживания нескольких клиентов с помощью мультиплексирования
+								(select, pselect, poll) в рамках одного потока на сервере</font></font></font>
+				</p>
+			</td>
+		</tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Processing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <label for="imageInput" class="custom-file-upload">
+        <i class="fa fa-cloud-upload"></i> Загрузить изображение
+      </label>
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        class="input-file"
+        style="display: none"
+      />
+      <canvas
+        id="canvas"
+        class="image-canvas"
+        style="max-width: 400px; max-height: 800px"
+      ></canvas>
+      <canvas id="histogramCanvas" class="histogram-canvas"></canvas>
+      <div class="sliders">
+        <label>
+          Контраст:
+          <input
+            type="range"
+            id="contrastSlider"
+            min="0"
+            max="200"
+            value="100"
+          />
+        </label>
+        <label>
+          Яркость:
+          <input
+            type="range"
+            id="brightnessSlider"
+            min="0"
+            max="200"
+            value="100"
+          />
+        </label>
+      </div>
+      <div class="buttons">
+        <button id="solarizeButton" class="btn">Соляризация</button>
+        <button id="embossButton" class="btn">Эффект тиснения</button>
+        <button id="resetButton" class="btn">Сброс</button>
+        <button id="saveButton" class="btn">Сохранить</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

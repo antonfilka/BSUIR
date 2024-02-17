@@ -1,0 +1,26 @@
+*.cache
+*.hw
+*.runs
+*.sim
+*.ip_user_files
+*.tmp
+
+# Always ignore journal and log files
+*.jou
+*.log
+*.str
+*.xpr
+
+# Ignore trash in bd directory except .BD files
+*.srcs/sources_1/bd/*/*
+!*.srcs/sources_1/bd/*/*.bd
+
+*~
+*#
+*.txt
+
+# Ignore sendboxes
+prj*/
+
+# Ignore Vivado temporary files
+.Xil/

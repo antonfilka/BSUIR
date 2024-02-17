@@ -1,0 +1,178 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<title>Контрольная работа №1</title>
+<base target="_top">
+</HEAD><BODY>
+<div align="center">
+  <p><strong>Контрольная работа № 1</strong></p>
+</div>
+
+<div align="center">
+  <p><strong>Модель сетевого взаимодействия клиент-сервер</strong></p>
+</div>
+
+	<a href="../lb/requirements.htm" target="_new"> Общие требования по
+		выполнению контрольных и лабораторных работ </a>
+	<br>
+	<p style="margin-bottom: 0cm; line-height: 100%">
+		<font size="3" style="font-size: 12pt"><strong><font
+				face="Arial, sans-serif">Тема работы:</font></strong><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">
+				</span></font></strong><strong><font face="Arial, sans-serif"><span
+					style="font-weight: normal">Передача текстовой информации по
+						протоколу TCP. Отслеживание состояния пакетов.</span></font></strong></font>
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br /> <strong>Теоретические сведения: </strong>тема <a
+			href="../../../Теория/content/lk03.htm" target="_new">3</a>, <a
+			href="../../../Теория/content/lk05.htm" target="_new">5</a> </strong>
+	</p>
+	<p
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Необходимо реализовать
+			простейшую программу-сервер с использованием протокола TCP. Сервер
+			должен поддерживать выполнение нескольких комманд, определяемых на
+			усмотрение студента, но как минимум должен поддерживать выполнение
+			следующих (или аналогичных): </font>
+	</p>
+	<ul>
+		<li />
+		<p
+			style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			<font face="Arial, sans-serif"><b>ECHO</b> (возвращает данные
+				переданные клиентом после команды), </font>
+		</p>
+		<li />
+		<p
+			style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			<font face="Arial, sans-serif"><b>TIME</b> (возвращает текущее
+				время сервера),</font>
+		</p>
+		<li />
+		<p
+			style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+			<font face="Arial, sans-serif"><b>CLOSE</b> (EXIT/QUIT)
+				(закрывает соединение).</font>
+		</p>
+	</ul>
+	<p
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Комманда может иметь параметры
+			(например <b>ECHO</b>). Любая команда должна оканчиваться символами <b>\r\n</b>
+			или <b>\n</b>.
+		</font>
+	</p>
+	<p
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">В качестве клиента
+			предполагается использование системных утилит: telnet, netcat и
+			других. Возможно использование собственной программы клиента, но это
+			является не обязательным.</font>
+	</p>
+	<p style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%">
+		<font size="3" style="font-size: 12pt"><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">Продемонстрировать
+						использование утилит: nmap -- сканирование портов сервера, netstat
+						-- список открытых сокетов на сервере, номера портов.</span></font></strong></font>
+	</p>
+	<br>
+	
+	<p>
+		<strong>Тема работы: </strong>Передача файла по протоколу TCP.
+		Обработка исключительных ситуаций средствами протокола.
+	</p>
+	
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br /> <strong>Теоретические сведения: </strong>тема <a
+			href="../../../Теория/content/lk06.htm" target="_new">6</a>, <a
+			href="../../../Теория/content/lk07.htm" target="_new">7</a> </strong>
+	</p>
+	<p align="left"
+		style="margin-bottom: 0cm; line-height: 115%; background: transparent">
+		<font size="3" style="font-size: 12pt"><b><strong><font
+					face="Arial, sans-serif">Клиент серверная программа для
+						передачи файла по сети с использованием протокола TCP</font></strong></b></font>
+	</p>
+	<p align="justify"
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Необходимо реализовать клиент и
+			последовательный сервер, позволяющие обмениваться файлами. Сервер
+			должен продолжать поддерживать комманды, которые были реализованы в <a
+			href="../lb/lb1.htm">лабораторной работе №1</a>, добавляя к этому комманду
+			передачи файла. Запрос на закачку файла на сервер или скачивание с
+			него, должен инцировать клиент. Команды могут быть к примеру <b>UPLOAD</b>/<b>DOWNLOAD</b>.
+			Решать проблемы связанные с тем что такого файла нет (например мы
+			хотим скачть файл с сервера, но не знаем каково его имя), не нужно,
+			достаточно вывести сообщение, что файла с запрашиваемым именем нет.
+		</font>
+	</p>
+	<p align="justify"
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font face="Arial, sans-serif">Файлы должны передаваться с
+			помощью протокола TCP. Реализация должна учитывать возможные
+			исключительные ситуации, связанные с проблемами сети, такие как
+			физический или программный обрыв соединения.</font>
+	</p>
+	<p align="justify"
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; background: transparent">
+		<font size="3" style="font-size: 12pt"><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">Алгоритм
+						определения разрыва соединения может быть любым, но таким, чтобы
+						пользователь смог узнать об этом в разумное время (от 30 секунд до
+						2-5 минут). До вывода сообщения о наличии проблем с соединением
+						программа должна восстанавливать передачу файла самостоятельно.
+						Если же сообщение о проблеме уже выведено, то решение о попытке
+						восстановления должен принимать пользователь.<br />
+				</span></font></strong><b><strong><font face="Arial, sans-serif">Сервер
+						обязан</font></strong></b><strong><font face="Arial, sans-serif"><span
+					style="font-weight: normal"> поддерживать </span></font></strong><b><strong><font
+					face="Arial, sans-serif">восстановление
+						докачивания/скачивания</font></strong></b><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">
+						файла но с ограничениями: после обрыва соединения </span></font></strong><b><strong><font
+					face="Arial, sans-serif">подключился тот же клиент</font></strong></b><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">
+						и пытается докачать/скачать </span></font></strong><b><strong><font
+					face="Arial, sans-serif">тот же файл</font></strong></b><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">,
+						что и в прошлую сессию. Если успел подключится другой клиент, или
+						сервер был перезапущен, то сервер имеет полное право удалить файлы
+						относящиеся к незавершенным загрузкам.<br /> Сервер и клиент
+						обязаны работать в рамках одного потока (см. пункт
+				</span></font></strong><b><a href="../lb/requirements.htm#1e"><strong><font
+						face="Arial, sans-serif">1.e </font></strong><strong><font
+						face="Arial, sans-serif">общих требований</font></strong></a></b><strong><font
+				face="Arial, sans-serif"><span style="font-weight: normal">)</span></font></strong></font>
+	</p>
+	<p align="justify"
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; background: transparent">
+		<br />
+
+	</p>
+	<p align="left"
+		style="margin-bottom: 0cm; line-height: 115%; page-break-before: auto; page-break-after: auto">
+		<font size="3" style="font-size: 12pt"><b><strong><font
+					face="Arial, sans-serif">Изучение внеполосного режима
+						передачи данных.</font></strong></b></font>
+	</p>
+	<p align="justify"
+		style="text-indent: 1.27cm; margin-bottom: 0cm; line-height: 115%; background: transparent">
+		<font face="Arial, sans-serif"><font size="3"
+			style="font-size: 12pt"><strong><font
+					face="Arial, sans-serif"><span style="font-weight: normal">Модификация
+							программы</span></font></strong><strong><span style="font-weight: normal">:</span></strong><strong><font
+					face="Arial, sans-serif"><span style="font-weight: normal">
+							во время передачи данных с использованием протокола TCP,
+							передающая сторона должна генерировать внеполосные данные и
+							выводить на экран общее количество переданных байт данных (не
+							включая срочные), принимающая сторона должна выводить на экран
+							общее количество принятых байт (не включая срочные) при получении
+							срочных данных.</span></font></strong></font></font>
+	</p>
+
+</BODY>
+</HTML>

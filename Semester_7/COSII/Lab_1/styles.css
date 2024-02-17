@@ -1,0 +1,76 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+.input-file {
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.image-canvas {
+  display: block;
+  margin: auto;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background: #7d50b3;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #7d50b3b1;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  background: #7d50b3;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  margin: 20px 0;
+  transition: background 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background: #7d50b3b1;
+}
+
+.histogram-canvas {
+  display: block;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+.sliders {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sliders label {
+  margin-right: 20px;
+}

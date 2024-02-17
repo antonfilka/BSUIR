@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type"
+	CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<title>Лабораторная работа №3</title>
+<base target="_top">
+</HEAD>
+<BODY>
+	<div align="center">
+		<a href="./requirements.htm" target="_new"> Общие требования по
+			выполнению лабораторных работ </a><br>
+		<p>
+			<strong>Лабораторная работа № 3 &quot;Модель сетевого
+				взаимодействия клиент-сервер&quot; </strong>
+		</p>
+	</div>
+	<p>
+		<strong>Тема работы: </strong>Передача файла по протоколу UDP.
+		Обработка исключительных ситуаций.
+	</p>
+	<p style="margin-bottom: 0cm; line-height: 115%">
+		<br /> <strong>Теоретические сведения: </strong>тема <a
+			href="../../../Теория/content/lk06.htm" target="_new">6</a>, <a
+			href="../../../Теория/content/lk07.htm" target="_new">7</a>, <a
+			href="../../../Теория/content/lk08.htm" target="_new">8</a>, <a
+			href="../../../Теория/content/lk09.htm" target="_new">9</a> </strong>
+	</p>
+	<p align="left"
+		style="margin-bottom: 0cm; font-weight: normal; line-height: 115%">
+		<font face="Arial, sans-serif"><font size="3"
+			style="font-size: 12pt">Добавить к клиенту и серверу
+				возможность передачи файла с помощью протокола UDP. Уделить внимание
+				обработке исключительных ситуаций, например физического или
+				программного обрыва соединения. Проверять можно с помощью включения
+				файерволла с отбрасыванием пакетов без уведомления (правило DROP) и
+				с отбрасыванием пакетов с уведомлением (правило REJECT).
+				Реализовать:</font></font>
+	</p>
+	<ul>
+		<li />
+		<p align="left"
+			style="margin-bottom: 0cm; font-weight: normal; line-height: 115%">
+			<font face="Arial, sans-serif"><font size="3"
+				style="font-size: 12pt"><u>механизм контроля
+						последовательности</u> принимаемых дейтаграм</font></font>
+		</p>
+		<li />
+		<p align="left"
+			style="margin-bottom: 0cm; font-weight: normal; line-height: 115%">
+			<font face="Arial, sans-serif"><font size="3"
+				style="font-size: 12pt"><font color="#000000"><span
+						style="text-decoration: none"><span
+							style="letter-spacing: normal"><span
+								style="font-style: normal"><u>механизм таймаутов</u></span></span></span></font><font
+					color="#000000"><span style="text-decoration: none"><span
+							style="letter-spacing: normal"><span
+								style="font-style: normal"> – периодическая посылка
+									контрольных пакетов для проверки доступности другой стороны
+									взаимодействия, завершение сессии с клиентом / сервером в
+									случае отсутствия контрольных пакетов в течении фиксированного
+									интервала времени</span></span></span></font></font></font>
+		</p>
+		<li />
+		<p align="left"
+			style="margin-bottom: 0cm; font-weight: normal; line-height: 115%">
+			<font face="Arial, sans-serif"><font size="3"
+				style="font-size: 12pt"><font color="#000000"><span
+						style="text-decoration: none"><span
+							style="letter-spacing: normal"><span
+								style="font-style: normal"><u>управлене потоком
+										передачи</u></span></span></span></font><font color="#000000"><span
+						style="text-decoration: none"><span
+							style="letter-spacing: normal"><span
+								style="font-style: normal"> — снижение нагрузки на
+									приемник в случае медленной обработки</span></span></span></font></font></font>
+		</p>
+	</ul>
+	<p align="left"
+		style="margin-bottom: 0cm; font-weight: normal; line-height: 115%">
+		<br />
+
+	</p>
+</BODY>
+</HTML>

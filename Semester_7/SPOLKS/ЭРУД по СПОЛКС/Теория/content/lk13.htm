@@ -1,0 +1,119 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//RU">
+<HTML>
+<HEAD>
+
+<script type='text/javascript' src='unitegallery/js/jquery-11.0.min.js'></script>
+
+<script type='text/javascript'
+	src='unitegallery/js/ug-common-libraries.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-functions.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-thumbsgeneral.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-thumbsstrip.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-touchthumbs.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-panelsbase.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-strippanel.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-gridpanel.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-thumbsgrid.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-tiles.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-tiledesign.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-avia.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-slider.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-sliderassets.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-touchslider.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-zoomslider.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-video.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-gallery.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-lightbox.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-carousel.js'></script>
+<script type='text/javascript' src='unitegallery/js/ug-api.js'></script>
+
+<link rel='stylesheet' href='unitegallery/css/unite-gallery.css'
+	type='text/css' />
+
+<script type='text/javascript'
+	src='unitegallery/themes/default/ug-theme-default.js'></script>
+<link rel='stylesheet'
+	href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+
+
+<META HTTP-EQUIV="Content-Type"
+	CONTENT="text/html; charset=windows-1251">
+<META HTTP-EQUIV="Content-Language" CONTENT="ru">
+<title>Тема №13</title>
+<base target="_top">
+</HEAD>
+<BODY>
+	<div align="center">
+		<p>
+			<strong>Тема № 13 &quot;Многоадресная передача&quot; </strong>
+		</p>
+	</div>
+	<p>
+		<strong>Содержание:</strong></b>
+	<p>
+	<ol>
+		<li>Multicast и канальный уровень.</li>
+		<li>Специальные адреса.</li>
+		<li>Ограничения области действия.</li>
+		<li>Программирование многоадресной передачи.</li>
+		<li>Работа с группами.</li>
+		<li>Примеры реализации.</li>
+	</ol>
+	</p>
+
+	<div align="center">
+		<p>
+			<strong>Мультимедийный конспект лекции</strong>
+		</p>
+	</div>
+
+	<div align="center">
+		<div id="gallery" style="display: none;">
+<img alt="Preview Image 0" src="../images/lk13/lk13.0.png" data-image="../images/lk13/lk13.0.png">
+<img alt="Preview Image 1" src="../images/lk13/lk13.1.png" data-image="../images/lk13/lk13.1.png">
+<img alt="Preview Image 2" src="../images/lk13/lk13.2.png" data-image="../images/lk13/lk13.2.png">
+<img alt="Preview Image 3" src="../images/lk13/lk13.3.png" data-image="../images/lk13/lk13.3.png">
+<img alt="Preview Image 4" src="../images/lk13/lk13.4.png" data-image="../images/lk13/lk13.4.png">
+<img alt="Preview Image 5" src="../images/lk13/lk13.5.png" data-image="../images/lk13/lk13.5.png">
+<img alt="Preview Image 6" src="../images/lk13/lk13.6.png" data-image="../images/lk13/lk13.6.png">
+<img alt="Preview Image 7" src="../images/lk13/lk13.7.png" data-image="../images/lk13/lk13.7.png">
+<img alt="Preview Image 8" src="../images/lk13/lk13.8.png" data-image="../images/lk13/lk13.8.png">
+<img alt="Preview Image 9" src="../images/lk13/lk13.9.png" data-image="../images/lk13/lk13.9.png">
+<img alt="Preview Image 10" src="../images/lk13/lk13.10.png" data-image="../images/lk13/lk13.10.png">
+<img alt="Preview Image 11" src="../images/lk13/lk13.11.png" data-image="../images/lk13/lk13.11.png">
+<img alt="Preview Image 12" src="../images/lk13/lk13.12.png" data-image="../images/lk13/lk13.12.png">
+<img alt="Preview Image 13" src="../images/lk13/lk13.13.png" data-image="../images/lk13/lk13.13.png">
+<img alt="Preview Image 14" src="../images/lk13/lk13.14.png" data-image="../images/lk13/lk13.14.png">
+<img alt="Preview Image 15" src="../images/lk13/lk13.15.png" data-image="../images/lk13/lk13.15.png">
+<img alt="Preview Image 16" src="../images/lk13/lk13.16.png" data-image="../images/lk13/lk13.16.png">
+<img alt="Preview Image 17" src="../images/lk13/lk13.17.png" data-image="../images/lk13/lk13.17.png">
+<img alt="Preview Image 18" src="../images/lk13/lk13.18.png" data-image="../images/lk13/lk13.18.png">
+<img alt="Preview Image 19" src="../images/lk13/lk13.19.png" data-image="../images/lk13/lk13.19.png">
+<img alt="Preview Image 20" src="../images/lk13/lk13.20.png" data-image="../images/lk13/lk13.20.png">
+<img alt="Preview Image 21" src="../images/lk13/lk13.21.png" data-image="../images/lk13/lk13.21.png">
+<img alt="Preview Image 22" src="../images/lk13/lk13.22.png" data-image="../images/lk13/lk13.22.png">
+<img alt="Preview Image 23" src="../images/lk13/lk13.23.png" data-image="../images/lk13/lk13.23.png">
+<img alt="Preview Image 24" src="../images/lk13/lk13.24.png" data-image="../images/lk13/lk13.24.png">
+<img alt="Preview Image 25" src="../images/lk13/lk13.25.png" data-image="../images/lk13/lk13.25.png">
+<img alt="Preview Image 26" src="../images/lk13/lk13.26.png" data-image="../images/lk13/lk13.26.png">
+<img alt="Preview Image 27" src="../images/lk13/lk13.27.png" data-image="../images/lk13/lk13.27.png">
+<img alt="Preview Image 28" src="../images/lk13/lk13.28.png" data-image="../images/lk13/lk13.28.png">
+<img alt="Preview Image 29" src="../images/lk13/lk13.29.png" data-image="../images/lk13/lk13.29.png">
+<img alt="Preview Image 30" src="../images/lk13/lk13.30.png" data-image="../images/lk13/lk13.30.png">
+			
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+    jQuery(document).ready(function(){
+
+      jQuery("#gallery").unitegallery().resize(550);
+
+    });
+    
+  </script>
+
+</BODY>
+</HTML>
